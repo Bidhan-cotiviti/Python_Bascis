@@ -1,3 +1,24 @@
 Hello Guys
 My name is Bidhan Khatiwada
 I live in Khthmandu Nepal
+
+text = "fragnance By calvein kein for women"
+
+# Find the indices of "By" and "for" in the text
+by_index = text.find("By")
+for_index = text.find("for")
+
+# Extract the title, brand, and category
+title = text[:for_index].strip()
+brand = text[by_index + 3:for_index].strip()
+category = text[for_index + 3:].strip()
+
+# Save the extracted information to respective files
+with open("title.txt", "w") as title_file:
+    title_file.write(f"title: {title}")
+
+with open("brand.txt", "w") as brand_file:
+    brand_file.write(f"brand: {brand}")
+
+with open("category.txt", "w") as category_file:
+    category_file.write(f"category: {category}")
